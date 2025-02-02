@@ -4,11 +4,13 @@ const App: React.FC = () => {
     const [ip, setIp] = useState("");
     const [result, setResult] = useState<string[]>([]);
     
+    // 按下 Enter 键时调用
     const handleKeyDown = async (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === "Enter" && ip.trim() !== "") {
             event.preventDefault();
             try {
-                const response = await fetch(`http://192.168.10.5:4001/mtr?ip=${ip}`);
+                // 使用 Vercel API 路由作为代理
+                const response = await fetch(`/api/proxy?ip=${ip}`);
                 const data = await response.json();
                 setResult(data.result || ["No data received"]);
             } catch (error) {
@@ -17,10 +19,12 @@ const App: React.FC = () => {
         }
     };
 
+    // 点击按钮时调用
     const handleSearchClick = async () => {
         if (ip.trim() !== "") {
             try {
-                const response = await fetch(`http://mtr.api.jsmsr.eu.org:4001/mtr?ip=${ip}`);
+                // 使用 Vercel API 路由作为代理
+                const response = await fetch(`/api/proxy?ip=${ip}`);
                 const data = await response.json();
                 setResult(data.result || ["No data received"]);
             } catch (error) {
@@ -32,7 +36,7 @@ const App: React.FC = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
             <div className="bg-white shadow-md rounded-xl w-full max-w-2xl p-6 flex flex-col gap-4">
-                <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">MTR LookingGlass</h1>
+                <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">MTR Routetrace</h1>
                 
                 <div className="flex gap-2">
                     <input
