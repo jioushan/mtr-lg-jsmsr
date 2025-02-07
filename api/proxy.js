@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const backendUrl = `http://mtr.api.jsmsr.eu.org:4001/mtr?ip=${ip}`;
+    const backendUrl = `https://mtr.api.jsmsr.eu.org:4001/mtr?ip=${ip}`;
     console.log(`Fetching data from: ${backendUrl}`);
 
     const response = await fetch(backendUrl);
