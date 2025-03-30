@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const backendUrl = `https://mtr.api.jsmsr.eu.org:4001/mtr?ip=${ip}`; // HTTPS 后端
+    const backendUrl = `https://mtr.api.jsmsr.eu.org/mtr?ip=${ip}`; // HTTPS 后端
     console.log(`Fetching data from backend: ${backendUrl}`);
 
     const response = await fetch(backendUrl);
