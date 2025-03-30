@@ -10,7 +10,7 @@ const App: React.FC = () => {
             event.preventDefault();
             try {
                 // 使用 Vercel API 路由作为代理
-                const response = await fetch(`/api/proxy?ip=${ip}`);
+                const response = await fetch(`https://mtr.api.jsmsr.eu.org/mtr?ip=${ip}`);
                 const data = await response.json();
                 setResult(data.result || ["No data received"]);
             } catch (error) {
@@ -24,7 +24,7 @@ const App: React.FC = () => {
         if (ip.trim() !== "") {
             try {
                 // 使用 Vercel API 路由作为代理
-                const response = await fetch(`/api/proxy?ip=${ip}`);
+                const response = await fetch(`https://mtr.api.jsmsr.eu.org/mtr?ip=${ip}`);
                 const data = await response.json();
                 setResult(data.result || ["No data received"]);
             } catch (error) {
