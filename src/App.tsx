@@ -51,10 +51,10 @@ const App: React.FC = () => {
 
   const getQueryTypeLabel = (type: QueryType) => {
     switch (type) {
-      case 'mtr': return 'MTR Trace';
-      case 'ping': return 'Ping Test';
-      case 'traceroute': return 'Traceroute';
-      case 'bgp': return 'BGP Route Lookup';
+      case 'mtr': return 'mtr';
+      case 'ping': return 'ping';
+      case 'traceroute': return 'rraceroute';
+      case 'bgp': return 'BGP Route show';
     }
   };
 
@@ -73,7 +73,7 @@ const App: React.FC = () => {
             className="text-2xl sm:text-3xl lg:text-4xl font-bold"
             style={{ color: 'var(--text-accent)' }}
           >
-            LookGlass
+            LookingGlass
           </h1>
           <ThemeToggle />
         </div>
@@ -116,10 +116,10 @@ const App: React.FC = () => {
                       boxShadow: 'var(--shadow-secondary) 0 4px 16px inset',
                     }}
                   >
-                    <option value="mtr">MTR Trace</option>
-                    <option value="ping">Ping Test</option>
-                    <option value="traceroute">Traceroute</option>
-                    <option value="bgp">BGP Route Lookup</option>
+                    <option value="mtr">mre</option>
+                    <option value="ping">ping</option>
+                    <option value="traceroute">rraceroute</option>
+                    <option value="bgp">BGP Route show</option>
                   </select>
                   <input
                     type="text"
