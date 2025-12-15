@@ -165,20 +165,10 @@ html.dark {
 ## 🔗 API 接口
 
 項目使用以下 API 端點：
+- 自行搭建
 
-- `https://mtr.api.jsmsr.eu.org/mtr?ip={ip}` - MTR 查詢
-- `https://mtr.api.jsmsr.eu.org/ping?ip={ip}` - Ping 測試
-- `https://mtr.api.jsmsr.eu.org/traceroute?ip={ip}` - 路由追蹤
-- `https://mtr.api.jsmsr.eu.org/bgp?ip={ip}` - BGP 路由查詢
-
-## 📄 許可證
-
-© 2019-2026 JSMSR Network. All rights reserved.
 
 ## 🤝 貢獻
 
 歡迎提交 Issue 和 Pull Request！
 
-## 📞 聯繫
-
-如有問題請聯繫 JSMSR Network 團隊。
