@@ -10,7 +10,7 @@ export default defineConfig({
 	react(),
 	],
 	server: {
-	allowedHosts: ['lg.jsmsr.com'],
+	allowedHosts: ['mtr.jsmsr.com'],
 	host: true
 	},
 	// 明確排除系統文件
