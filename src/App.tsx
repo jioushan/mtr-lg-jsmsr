@@ -20,13 +20,13 @@ const App: React.FC = () => {
           url = `https://mtr.api.jsmsr.eu.org/mtr?ip=${ip}`;
           break;
         case 'ping':
-          url = `https://mtr.api.jsmsr.eu.org/ping?ip=${ip}`; // 待實現
+          url = `https://domian.com?ip=${ip}`; // 待實現
           break;
         case 'traceroute':
-          url = `https://mtr.api.jsmsr.eu.org/traceroute?ip=${ip}`; // 待實現
+          url = `https://domian.com/traceroute?ip=${ip}`; // 待實現
           break;
         case 'bgp':
-          url = `https://mtr.api.jsmsr.eu.org/bgp?ip=${ip}`; // 待實現
+          url = `https://domian.com/bgp?ip=${ip}`; // 待實現
           break;
       }
 
@@ -219,7 +219,7 @@ const App: React.FC = () => {
             className="text-xs sm:text-sm"
             style={{ color: 'var(--text-secondary)' }}
           >
-            © 2019-2026 JSMSR Network. All rights reserved.
+            © 2025 All rights reserved.
           </p>
         </div>
       </footer>
