@@ -1,4 +1,4 @@
-# JSMSR Network LookingGlass - 主題系統修復
+# LookingGlass - 主題系統修復
 
 ## 🔧 修復內容
 
@@ -86,11 +86,3 @@ npm run build
 - **主題不持久化**：檢查localStorage權限
 - **系統主題不生效**：檢查瀏覽器權限設置
 - **CSS變數不生效**：檢查CSS優先級和選擇器
-
-## 📞 技術支持
-
-如果問題持續存在，請提供：
-- 瀏覽器類型和版本
-- 控制台錯誤信息
-- 網路標籤截圖
-- localStorage內容
