@@ -1,4 +1,4 @@
-# JSMSR Network LookingGlass - 部署指南
+# LookingGlass - 部署指南
 
 ## 📋 部署前檢查
 
@@ -89,7 +89,7 @@ server {
 
     # API 代理（如果需要）
     location /api/ {
-        proxy_pass https://mtr.api.jsmsr.eu.org/;
+        proxy_pass https://<domain.com>/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
     }
@@ -132,7 +132,7 @@ npm run build
 
 ```bash
 # 測試 API 連通性
-curl -I https://mtr.api.jsmsr.eu.org/mtr?ip=8.8.8.8
+curl -I https://<domain.com>/mtr?ip=8.8.8.8
 
 # 檢查防火牆
 sudo ufw status
@@ -184,19 +184,3 @@ docker-compose up -d
 # 清理舊鏡像
 docker image prune -f
 ```
-
-## 🔒 安全注意事項
-
-1. **HTTPS 強制**：始終使用 HTTPS
-2. **防火牆**：只開放必要端口
-3. **定期更新**：保持依賴項更新
-4. **監控訪問**：設置日誌和監控
-
-## 📞 支持
-
-如遇部署問題，請提供：
-- 錯誤信息和日誌
-- 系統信息（OS、Docker 版本等）
-- 部署步驟詳情
-
-聯繫：JSMSR Network 技術支持
