@@ -49,7 +49,7 @@ const App: React.FC = () => {
 
   const handleSearchClick = () => fetchData();
 
-  const getTypeLabel = (type: Type) => {
+  const getQueryTypeLabel = (type: QueryType) => {
     switch (type) {
       case 'mtr': return 'mtr';
       case 'ping': return 'ping';
@@ -103,7 +103,7 @@ const App: React.FC = () => {
                   className="block text-sm font-medium mb-2"
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                   Type
+                   Query Type
                 </label>
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <select
