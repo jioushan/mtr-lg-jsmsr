@@ -49,7 +49,7 @@ const App: React.FC = () => {
 
   const handleSearchClick = () => fetchData();
 
-  const getQueryTypeLabel = (type: QueryType) => {
+  const getTypeLabel = (type: Type) => {
     switch (type) {
       case 'mtr': return 'mtr';
       case 'ping': return 'ping';
@@ -103,7 +103,7 @@ const App: React.FC = () => {
                   className="block text-sm font-medium mb-2"
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  Query Type
+                   Type
                 </label>
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <select
@@ -123,7 +123,7 @@ const App: React.FC = () => {
                   </select>
                   <input
                     type="text"
-                    placeholder="Enter IP address or hostname"
+                    placeholder="Enter IP address or domain"
                     value={ip}
                     onChange={(e) => setIp(e.target.value)}
                     onKeyDown={handleKeyDown}
@@ -146,7 +146,7 @@ const App: React.FC = () => {
                     boxShadow: 'var(--shadow-primary) 0 4px 16px',
                   }}
                 >
-                  {loading ? "Querying..." : "Query"}
+                  {loading ? "Loading..." : "Enter"}
                 </button>
               </div>
             </div>
@@ -184,7 +184,7 @@ const App: React.FC = () => {
                       className="text-base sm:text-lg text-center"
                       style={{ color: 'var(--text-primary)' }}
                     >
-                      Querying...
+                      Loading...
                     </span>
                   </div>
                 ) : (
