@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# JSMSR Network LookingGlass 部署腳本
+# LookingGlass 部署腳本
 # 用於在服務器上正確構建和部署項目
 
 set -e
 
-echo "🚀 開始部署 JSMSR Network LookingGlass..."
+echo "🚀 開始部署LookingGlass..."
 
 # 檢查 Node.js 版本
 echo "📋 檢查 Node.js 版本..."
