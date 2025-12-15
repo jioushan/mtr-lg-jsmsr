@@ -1,4 +1,4 @@
-# JSMSR Network LookingGlass
+# LookingGlass
 
 一個現代化的網路診斷工具前端界面，採用 React + TypeScript + Vite 構建，具備完整的深色主題系統和毛玻璃效果。
 
@@ -6,7 +6,7 @@
 
 - 🚀 **現代化界面**：採用毛玻璃效果和流暢動畫
 - 🌓 **智能主題系統**：自動跟隨系統主題，手動切換支持
-- 🌐 **多協議支持**：MTR、Ping、Traceroute、BGP 路由查詢
+- 🌐 **多協議支持**：mtr、Ping、Traceroute、BGP 路由查詢
 - 📱 **響應式設計**：完美適配桌面和移動設備
 - 🎨 **Mac 風格設計**：仿 Tahoe 毛玻璃效果
 - 🔒 **架構兼容**：支持 ARM64 和 x86 架構部署
@@ -107,7 +107,7 @@ docker run -d -p 8080:80 lookingglass
 
 本項目設計為架構無關：
 
-- ✅ **開發環境**：ARM64 Mac (M1/M2/M3)
+- ✅ **開發環境**：ARM64
 - ✅ **生產環境**：x86 Linux 服務器
 - ✅ **容器化**：Docker 多架構支持
 
