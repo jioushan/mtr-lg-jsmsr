@@ -53,7 +53,7 @@ const App: React.FC = () => {
     switch (type) {
       case 'mtr': return 'mtr';
       case 'ping': return 'ping';
-      case 'traceroute': return 'rraceroute';
+      case 'traceroute': return 'traceroute';
       case 'bgp': return 'BGP Route show';
     }
   };
