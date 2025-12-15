@@ -1,4 +1,4 @@
-# JSMSR Network LookingGlass - 响应式设计优化
+# LookingGlass - 响应式设计优化
 
 ## 📱 响应式设计特性
 
