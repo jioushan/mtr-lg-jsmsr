@@ -5,24 +5,10 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
 //	tailwindcss(),
-      	plugins: [
+      	plugins: [ 
 	tailwindcss(),
 	react(),
 	],
-	server: {
-	allowedHosts: ['lg.jsmsr.com'],
-	host: true
-	},
-	// 明確排除系統文件
-	build: {
-		rollupOptions: {
-			external: []
-		}
-	},
-	// 忽略這些文件
-	optimizeDeps: {
-		exclude: []
-	}
 //css: {
 //    postcss: "postcss.config.mjs",
 //  },

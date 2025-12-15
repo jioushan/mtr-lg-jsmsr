@@ -70,3 +70,126 @@ button:focus-visible {
 
 @import "tailwindcss";
 
+/* 毛玻璃效果 */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--bg-glass-border);
+}
+
+/* 確保主題應用到整個頁面 */
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* 防止橫向滾動 */
+  overflow-x: hidden;
+}
+
+/* 移動設備優化 */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* 確保輸入框在小屏幕上不會太小 */
+  input, select, button {
+    min-height: 44px; /* iOS 推薦的最小觸摸目標 */
+    font-size: 16px; /* 防止 iOS 縮放 */
+  }
+
+  /* 優化滾動體驗 */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* 平板優化 */
+@media (min-width: 641px) and (max-width: 1023px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* 桌面優化 */
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* 高分辨率屏幕優化 */
+@media (min-width: 1440px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* 電視和超大屏幕 */
+@media (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* 優化選擇框樣式 */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* 優化滾動條 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Firefox 滾動條 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-primary) var(--bg-secondary);
+}
+
+/* 確保圖片和媒體響應式 */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 優化焦點樣式 */
+*:focus {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+/* 減少動畫在偏好減少動畫的用戶 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  lookingglass:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lookingglass.rule=Host(`lg.jsmsr.com`)"
+      - "traefik.http.routers.lookingglass.entrypoints=websecure"
+      - "traefik.http.routers.lookingglass.tls.certresolver=letsencrypt"
+      - "traefik.http.services.lookingglass.loadbalancer.server.port=80"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true

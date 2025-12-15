@@ -13,9 +13,8 @@ button {
   flex-shrink: 0;
 }
 
-/* 结果区背景黑，文字白 */
 .results {
-  background-color: #1a1a1a; /* 深黑背景 */
+  background-color: #1a1a1a; /* 黑色背景 */
   color: white;  /* 白色字体 */
   padding: 20px;
   border-radius: 8px;
@@ -34,16 +33,5 @@ button {
 
 .read-the-docs {
   color: #888;
-}
-
-/* loading 动画 */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
 }
 

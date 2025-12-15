@@ -1,50 +1,184 @@
-# React + TypeScript + Vite
+# JSMSR Network LookingGlass
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一個現代化的網路診斷工具前端界面，採用 React + TypeScript + Vite 構建，具備完整的深色主題系統和毛玻璃效果。
 
-Currently, two official plugins are available:
+## ✨ 功能特點
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🚀 **現代化界面**：採用毛玻璃效果和流暢動畫
+- 🌓 **智能主題系統**：自動跟隨系統主題，手動切換支持
+- 🌐 **多協議支持**：MTR、Ping、Traceroute、BGP 路由查詢
+- 📱 **響應式設計**：完美適配桌面和移動設備
+- 🎨 **Mac 風格設計**：仿 Tahoe 毛玻璃效果
+- 🔒 **架構兼容**：支持 ARM64 和 x86 架構部署
 
-## Expanding the ESLint configuration
+## 🛠️ 技術棧
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **前端框架**：React 18 + TypeScript
+- **構建工具**：Vite 6
+- **樣式系統**：Tailwind CSS 4 + 自定義主題變數
+- **代碼檢查**：ESLint
+- **容器化**：Docker + Docker Compose
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 本地開發
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 環境要求
+
+- Node.js 18+
+- npm 或 yarn 或 pnpm
+
+### 安裝依賴
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 啟動開發服務器
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+訪問 http://localhost:5173 查看應用。
+
+### 代碼檢查
+
+```bash
+npm run lint
+```
+
+### 構建生產版本
+
+```bash
+npm run build
+```
+
+## 📦 部署指南
+
+### 方法一：傳統部署
+
+1. **複製源代碼**（排除 node_modules）
+   ```bash
+   # 只複製必要的文件
+   rsync -av --exclude='node_modules' --exclude='.git' --exclude='dist' ./ server:/path/to/app/
+   ```
+
+2. **在服務器上安裝依賴並構建**
+   ```bash
+   cd /path/to/app
+   npm ci --only=production
+   npm run build
+   ```
+
+3. **部署 dist/ 目錄**
+   ```bash
+   # 使用 nginx 或其他 web 服務器提供 dist/ 目錄
+   ```
+
+### 方法二：使用部署腳本
+
+```bash
+# 在服務器上運行
+./deploy.sh
+```
+
+### 方法三：Docker 部署
+
+#### 使用 Docker Compose（推薦）
+
+```bash
+# 構建並啟動
+docker-compose up -d
+
+# 查看日誌
+docker-compose logs -f
+```
+
+#### 手動 Docker 構建
+
+```bash
+# 構建鏡像
+docker build -t lookingglass .
+
+# 運行容器
+docker run -d -p 8080:80 lookingglass
+```
+
+## 🔧 架構兼容性
+
+本項目設計為架構無關：
+
+- ✅ **開發環境**：ARM64 Mac (M1/M2/M3)
+- ✅ **生產環境**：x86 Linux 服務器
+- ✅ **容器化**：Docker 多架構支持
+
+### 為什麼要這樣設計？
+
+1. **避免架構依賴**：不在開發環境生成平台相關的二進制文件
+2. **確保一致性**：所有環境使用相同的源代碼和構建過程
+3. **簡化部署**：服務器上重新安裝依賴和構建，確保兼容性
+
+## 📁 項目結構
+
+```
+my-lookingglass/
+├── public/                 # 靜態資源
+├── src/
+│   ├── components/         # React 組件
+│   │   └── ThemeToggle.tsx # 主題切換組件
+│   ├── App.tsx            # 主應用組件
+│   ├── index.css          # 全域樣式和主題變數
+│   └── main.tsx           # 應用入口
+├── .gitignore             # Git 忽略規則
+├── .dockerignore          # Docker 忽略規則
+├── deploy.sh              # 部署腳本
+├── Dockerfile             # Docker 鏡像配置
+├── docker-compose.yml     # Docker Compose 配置
+├── nginx.conf             # Nginx 配置
+├── package.json           # 項目配置
+├── tailwind.config.js     # Tailwind 配置
+├── tsconfig.json          # TypeScript 配置
+└── vite.config.ts         # Vite 配置
+```
+
+## 🎨 主題系統
+
+### 自動主題切換
+
+- 根據系統偏好自動切換明暗主題
+- 用戶手動選擇會覆蓋系統設置
+- 瀏覽器 UI（狀態欄、進度條）會同步變換顏色
+
+### 自定義主題變數
+
+```css
+:root {
+  --bg-primary: #ffffff;    /* 淺色主題背景 */
+  --text-primary: #1e293b;  /* 淺色主題文字 */
+}
+
+html.dark {
+  --bg-primary: #0f172a;    /* 深色主題背景 */
+  --text-primary: #f8fafc;  /* 深色主題文字 */
+}
+```
+
+## 🔗 API 接口
+
+項目使用以下 API 端點：
+
+- `https://mtr.api.jsmsr.eu.org/mtr?ip={ip}` - MTR 查詢
+- `https://mtr.api.jsmsr.eu.org/ping?ip={ip}` - Ping 測試
+- `https://mtr.api.jsmsr.eu.org/traceroute?ip={ip}` - 路由追蹤
+- `https://mtr.api.jsmsr.eu.org/bgp?ip={ip}` - BGP 路由查詢
+
+## 📄 許可證
+
+© 2019-2026 JSMSR Network. All rights reserved.
+
+## 🤝 貢獻
+
+歡迎提交 Issue 和 Pull Request！
+
+## 📞 聯繫
+
+如有問題請聯繫 JSMSR Network 團隊。
