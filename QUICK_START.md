@@ -1,4 +1,4 @@
-# JSMSR Network LookingGlass - 快速入門
+# mtr LookingGlass - 快速入門
 
 ## 🚀 快速開始
 
@@ -63,9 +63,5 @@ npm run build
 
 ```bash
 # 測試 MTR API
-curl "https://mtr.api.jsmsr.eu.org/mtr?ip=8.8.8.8"
+curl "https://<domain.com>/mtr?ip=8.8.8.8"
 ```
-
-## 📞 聯繫支持
-
-如遇問題，請聯繫 JSMSR Network 技術支持團隊。
