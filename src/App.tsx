@@ -116,9 +116,9 @@ const App: React.FC = () => {
                       boxShadow: 'var(--shadow-secondary) 0 4px 16px inset',
                     }}
                   >
-                    <option value="mtr">mre</option>
+                    <option value="mtr">mtr</option>
                     <option value="ping">ping</option>
-                    <option value="traceroute">rraceroute</option>
+                    <option value="traceroute">traceroute</option>
                     <option value="bgp">BGP Route show</option>
                   </select>
                   <input
